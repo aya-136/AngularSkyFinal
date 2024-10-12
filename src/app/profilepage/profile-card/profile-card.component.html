@@ -1,0 +1,63 @@
+<div class=" rounded-4 mb-4 p-3 bg-light" style="box-shadow: 0px 6px 10px -3px rgb(175, 175, 175);">
+  <div class="d-flex align-items-center justify-content-between p-2 fs-4">
+    <div class="d-flex align-items-center">
+      <img [src]="employeeDetails.profileImageUrl" class="rounded-circle border" [alt]="employeeDetails.employeeName"
+        width="150" height="150">
+      <div class="ms-2 text-start">
+        <h5 class="mt-2 fw-bold">{{ employeeDetails.employeeName }}</h5>
+        <p class="mb-0 text-muted">{{ employeeDetails.department }}</p>
+        <p class="text-secondary">{{ employeeDetails.position }}</p>
+      </div>
+    </div>
+    <div class="text-end">
+      <a class="btn btn-success text-nowrap">New Request</a>
+    </div>
+  </div>
+  <div class="row g-3 ms-2 mt-3 align-items-center justify-content-between text-nowrap">
+    <div class="col-md-2">
+        <div class="d-flex">
+          <i class="fas fa-user fa-3x me-3 text-secondary"></i>
+          <div>
+            <strong>Reporting To:</strong>
+            <br>{{ employeeDetails.reportingTo }}
+          </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="d-flex">
+          <i class="fas fa-building fa-3x me-3 text-secondary"></i>
+          <div>
+            <strong>Corporate Level:</strong>
+            <br>{{ employeeDetails.corporateLevel }}
+          </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="d-flex">
+          <i class="fas fa-hourglass fa-3x me-3 text-secondary"></i>
+          <div>
+            <strong>Lifetime:</strong>
+            <span class="d-block">{{ employeeDetails.lifetime }}</span>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="d-flex">
+          <i class="fas fa-suitcase fa-3x me-3 text-secondary"></i>
+          <div>
+            <strong>Vacation Days Left:</strong>
+            <span class="d-block">{{ employeeDetails.vacationDaysLeft }} Days</span>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="d-flex">
+          <i class="fas fa-briefcase-medical fa-3x me-3 text-secondary"></i>
+          <div>
+            <strong>Sick Days Left:</strong>
+            <span class="d-block">{{ employeeDetails.sickDaysLeft }} Days</span>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

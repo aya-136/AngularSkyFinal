@@ -1,0 +1,30 @@
+<div class="p-3 mb-4 bg-light rounded-4 d-flex flex-row align-items-center justify-content-between"
+  style="box-shadow: 0px 6px 10px -3px rgb(175, 175, 175);">
+  <div class="d-flex">
+    <img [src]="imageUrl" alt="User" class="rounded-circle me-3">
+    <div>
+      <h5 class="m-1 fw-bold">{{userName}}</h5>
+      <p class="text-secondary m-0">{{userRole}}</p>
+      <div class="d-flex mt-5 mb-3">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-user fa-3x me-2 text-secondary"></i>
+          <div>
+            <p class="m-0 text-dark fw-bold">Reporting To:</p>
+            <p class="text-muted m-0">{{reportingManager}}</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center ms-5">
+          <i class="fas fa-chart-line fa-3x me-2 text-secondary"></i>
+          <div>
+            <p class="m-0 text-dark fw-bold">Corporate Level:</p>
+            <p class="text-muted m-0">{{corporateLevel}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="text-end ms-2 text-nowrap ">
+    <a [routerLink]="['/profile']" class="btn btn-outline-success bg-white">View Profile</a>
+  </div>
+</div>

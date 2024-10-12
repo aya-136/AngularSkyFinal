@@ -1,0 +1,70 @@
+<div class="container pb-4 mt-5">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-tasks fa-3x me-2 text-success"></i>
+            <h5 class="mb-0 ms-2">{{ pageName }} Requests</h5>
+        </div>
+        <div class="d-flex align-items-center border rounded-pill p-2 bg-white">
+            <i class="fas fa-search text-success"></i>
+            <input type="text" id="searchInput" placeholder="Search..." [(ngModel)]="searchTerm" class="border-0 ms-2"
+                name="searchTerm" (input)="updateFilteredRequests()">
+        </div>
+    </div>
+    <hr />
+    @if(showFilter){
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <input type="checkbox" class="me-2" id="select-all" [(ngModel)]="selectAll" (click)="toggleSelectAll()" />
+            <label for="select-all">Select All</label>
+        </div>
+        <div class="d-flex">
+            <button class="btn btn-sm">
+                <i class="fas fa-filter fa-2x"></i>
+            </button>
+        </div>
+    </div>
+    }
+    <div class="row align-items-center">
+        @for (request of paginatedRequests | slice: displayStart: displayLimit; track request.id){
+        <div class="col-md-3">
+            <app-card>
+                @if(showFilter){
+                <input class="form-check-input me-2 text-start" type="checkbox" [(ngModel)]="selectAll" />
+                }
+                <img [src]="request.imageUrl" alt="{{ request.name }}" class="img-fluid rounded-circle mb-2">
+                <h4 [innerHTML]="request.name | highlight : searchTerm"></h4>
+                <div class="text-start">
+                    <h6 class="text-muted me-1">Submitted on:</h6>
+                    <p class="my-1">{{ request.submittedOn }}</p>
+                    <h6 class="text-muted me-1">Duration:</h6>
+                    <p class="my-1"><span [innerHTML]="request.duration | highlight : searchTerm"></span></p>
+                    @if(pageName === 'Vacation'){
+                    <h6 class="text-muted me-1">Salary:</h6>
+                    <p class="my-1"><span [innerHTML]="request.salary | highlight : searchTerm"></span> AED</p>
+                    }@else if(showCurrent) {
+                    <h6 class="text-muted me-1">Currently at:</h6>
+                    <p class="my-1 text-success fs-5">{{ request.currentlyAt }}</p>
+                    }
+                </div>
+
+                @if(showBtn){
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="button" class="btn btn-outline-success me-2 w-100">Decline</button>
+                    <button type="button" class="btn btn-success w-100">Approve</button>
+                </div>
+                }
+            </app-card>
+        </div>
+
+        }
+    </div>
+    @if(showPager){
+    <app-pager [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="page"
+        (pageChanged)="onPageChanged($event)" />
+    }@else {
+    <div class="text-end mt-3 fs-5">
+        <a routerLink="/vacationRequests" class="text-success text-decoration-none">View More<i
+                class="fas fa-angle-right m-2"></i></a>
+    </div>
+    }
+</div>

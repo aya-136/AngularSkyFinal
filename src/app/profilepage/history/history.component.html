@@ -1,0 +1,29 @@
+<div class="p-3 mb-4 bg-light rounded-4 border" style="box-shadow: 0px 6px 10px -3px rgb(175, 175, 175);" >
+  <h4 class="text-start">
+    <i class="fas fa-tasks fa-fw me-2 text-success"></i> History
+  </h4>
+  <hr>
+  <div class="row">
+    @for (vacation of vacationHistory; track $index) {
+    <div class="col-md-3">
+      <app-card>
+        <div class="text-start">
+          <p class="fw-bold text-nowrap">{{ vacation.type }}</p>
+          <div class="text-secondary">
+            {{ vacation.startDate | date:'shortDate' }} - {{ vacation.endDate | date:'shortDate' }}
+          </div>
+          <p class="fw-bold text-secondary">
+            {{ vacation.duration }} days <br>
+          </p>
+          <p class="text-secondary">
+            Approved by: {{ vacation.approver }}
+          </p>
+        </div>
+      </app-card>
+    </div>
+    }
+    <div class="text-end mt-3">
+      <a class="text-success text-decoration-none">View More<i class="fas fa-angle-right ms-1"></i></a>
+    </div>
+  </div>
+</div>

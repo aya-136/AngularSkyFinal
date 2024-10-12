@@ -1,0 +1,14 @@
+{
+    "profileImageUrl": "/users/AhmadAzmi.jpeg",
+    "employeeName": "Ahmad Azmi",
+    "department": "Marketing Department",
+    "position": "Junior Accounting Officer",
+    "reportingTo": "Salwa Assem",
+    "corporateLevel": "Level 10",
+    "lifetime": "2.5 Years",
+    "vacationDaysLeft": 14,
+    "sickDaysLeft": 14,
+    "VacationRequests":10,
+    "VacationLeave":10
+  }
+  

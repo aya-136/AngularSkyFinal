@@ -1,0 +1,17 @@
+.pagination {
+    background-color: #c5c5c5;
+    padding: 5px;
+}
+.page-link {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pagination .page-item.active .page-link {
+    background-color: white;
+}
+.page-item.disabled .page-link {
+    pointer-events: none;
+    opacity: 0.5;
+}
