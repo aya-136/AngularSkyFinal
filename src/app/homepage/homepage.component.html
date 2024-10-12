@@ -1,0 +1,18 @@
+<div class="container p-4">
+    <home-header />
+    <div class="row" >
+        <div class="col-md-6">
+            <home-profile-card />
+        </div>
+        <div class="col-md-6">
+            <home-summary-cards />
+        </div>
+    </div>
+    <div class="row">
+        <home-carsoul />
+    </div>
+    <div class="row border rounded-5 shadow-sm bg-light">
+        <vacation-requests [displayStart]="displayStart" [displayLimit]="displayLimit" [pageName]="page"
+            [showPendingOnly]="false" [showBtn]="true"/>
+    </div>
+</div>

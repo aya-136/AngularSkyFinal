@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg bg-success fixed-top " id="nav-placeholder">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fs-3 text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a routerLink="/" routerLinkActive="fw-bold" [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav-link text-white">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/profile" routerLinkActive="fw-bold" [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav-link text-white">Profiles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white">Settings</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white"><i class="fas fa-bell fa-2x"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/profile" class="nav-link text-white"><i class="fas fa-user-circle fa-2x"
+                            routerLinkActive="text-muted" [routerLinkActiveOptions]="{ exact: true }"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
